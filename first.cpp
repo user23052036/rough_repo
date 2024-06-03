@@ -12,7 +12,7 @@ int main()
     cout<<"first string:---> "<<str1<<endl;
     cout<<"second string:--->"<<str2<<"\n\n";
 
-    switch_lol(&str1,&str2);
+    switch_lol(str1,str2);
 
     cout<<"after switching we have:---> ";
     cout<<"first string:---> "<<str1<<endl;
@@ -20,10 +20,9 @@ int main()
     return 0;
 }
 
-void switch_lol(string *str1, string *str2)
+void switch_lol(string &str1, string &str2)
 {
-    string *temp;
-    *temp=*str1;
-    *str1=*str2;
-    *str2=*temp;
+    string temp=str1;
+    str1=str2;
+    str2=temp;
 }
